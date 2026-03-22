@@ -1,7 +1,7 @@
 #include"../include/fileio.h"
 
 void usage(char *prog){
-	printf("Usage: %s [--mode=Mode] [--file=] [--size-bytes=n] [--iters=N]\n", prog);
+	printf("Usage: %s [--mode=Mode] [--file=] [--size-bytes=n] [--iters=N]\n\n", prog);
     	printf("Modes:\n");
     	printf("  write: Moving data from UB to  KPC\n");
     	printf("  write_fsync: Moving data from UB to KPC to Disk\n");
@@ -17,14 +17,14 @@ int main(int argc,char*argv[]){
 	mode="write";
     	char *filename=NULL;
 	filename="testfile.bin";
-    	size_t size=4096;
+    	size_t size=2.56e8;
     	int iters=1000;
 
 	for(int i=1;i<argc;i++) {
         	if(strncmp(argv[i], "--mode=", 7) == 0) mode=argv[i] + 7;
         else if (strncmp(argv[i], "--file=", 7) == 0) filename=argv[i] + 7;
-        else if (strncmp(argv[i], "--size-bytes", 13) == 0) size=atoi(argv[i] + 13);
-        else if (strncmp(argv[i], "--iters=", 9) == 0) iters= atoi(argv[i] + 9);
+        else if (strncmp(argv[i], "--size-bytes", 12) == 0) size=atoi(argv[i] + 12);
+        else if (strncmp(argv[i], "--iters=", 8) == 0) iters= atoi(argv[i] + 8);
         else if (strcmp(argv[i], "--help") == 0 || strcmp(argv[i], "-h") == 0) {
              usage(argv[0]);
         }
