@@ -23,10 +23,14 @@ Writing data to the disk goes throw the follwing I/O data path:
 | ---------------- | --------------- |
 | `printf()`       | UB → SB         |
 | `fflush()`       | SB → KPC        |
+|`fwrite()+fflush()`|UB → SB → KPC   |
+|`fwrite()+fflush()+fsync()`|UB → SB → KPC → Disk|
 | `write()`        | UB → KPC        |
 | `fsync()`        | KPC → Disk      |
-| `O_DIRECT write` | UB → Disk       |
-| `O_SYNC write`   | UB → KPC → Disk |
+| `write()+fsync(fd)`|UB → KPC → Disk|
+| `O_DIRECT flag in write()` | UB → Disk       |
+| `O_SYNC flag in write()`   | UB → KPC → Disk |
+
 
 
 
