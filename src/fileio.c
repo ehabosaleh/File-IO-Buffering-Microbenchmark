@@ -23,7 +23,7 @@ int main(int argc,char*argv[]){
 	for(int i=1;i<argc;i++) {
         	if(strncmp(argv[i], "--mode=", 7) == 0) mode=argv[i] + 7;
         else if (strncmp(argv[i], "--file=", 7) == 0) filename=argv[i] + 7;
-        else if (strncmp(argv[i], "--size-bytes", 12) == 0) size=atoi(argv[i] + 12);
+        else if (strncmp(argv[i], "--size-bytes=", 13) == 0) size=atoi(argv[i] + 13);
         else if (strncmp(argv[i], "--iters=", 8) == 0) iters= atoi(argv[i] + 8);
         else if (strcmp(argv[i], "--help") == 0 || strcmp(argv[i], "-h") == 0) {
              usage(argv[0]);
