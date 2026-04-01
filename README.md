@@ -13,7 +13,7 @@ Writing data to the disk goes throw the follwing I/O data path:
    
 3. Kernel Page Cache (KPC), the kernel memory:
    
-   used by I/O syscalls, such as `read()` and `write()`. The data that stays on these pages is not yet on disk and these pages are marked as `Dirty`
+   used by I/O system calls, such as `read()` and `write()`. The data that stays on these pages is not yet on disk and these pages are marked as `Dirty Pages`
    
 7. Disk (D):  storage device:
   
