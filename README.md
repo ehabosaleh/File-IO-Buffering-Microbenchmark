@@ -59,8 +59,7 @@ After compilation the executable will be located at: `bin/fileio`. Examples:
 ./fileio --mode=stdio_fsync --size-bytes=1048576
 
 ./fileio --mode=osync --size-bytes=1048576
-
-.fileio --mode=odirect --size-bytes=1048576
+./fileio --mode=odirect --size-bytes=1048576
 
 ```
 
