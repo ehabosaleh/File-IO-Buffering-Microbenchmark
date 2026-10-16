@@ -15,14 +15,14 @@ jobs:
       - run: cmake -S . -B build
       - run: cmake --build build
       - name: write - Moving data from UB to  KPC
-        run: ./bin/fileio --mode=write --size-bytes=100MiB
+        run: ./bin/fileio --mode=write --size-bytes=1048576
       - name: write_fsync Moving data from UB to KPC to Disk
-        run: ./bin/fileio --mode=write_fsync --size-bytes=100MiB
+        run: ./bin/fileio --mode=write_fsync --size-bytes=1048576
       - name: stdio Moving data from UB to SB to KPC
-        run: ./bin/fileio --mode=stdio --size-bytes=100MiB
+        run: ./bin/fileio --mode=stdio --size-bytes=1048576
       - name: stdio_fsync Moving data from UB to SB to KPC to Disk
-        run: ./bin/fileio --mode=stdio_fsync --size-bytes=100MiB
+        run: ./bin/fileio --mode=stdio_fsync --size-bytes=1048576
       - name: osync Moving data from UB to SB to KPC to Disk
-        run: ./bin/fileio --mode=osync --size-bytes=100MiB
+        run: ./bin/fileio --mode=osync --size-bytes=1048576
       - name: odirect Moving data from UB to Disk
-        run: ./bin/fileio --mode=odirect --size-bytes=100MiB
+        run: ./bin/fileio --mode=odirect --size-bytes=1048576
